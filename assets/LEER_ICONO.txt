@@ -1,0 +1,13 @@
+Para usar el icono del instituto:
+
+1. Copia aqui el logo del instituto.
+2. Renombralo como uno de estos nombres:
+
+   logo_instituto.png
+   logo_instituto.jpg
+   logo_instituto.jpeg
+   logo_instituto.ico
+
+3. Ejecuta build_exe_1_archivo.bat o build_exe_carpeta.bat.
+
+El script tools\crear_icono.py convertira automaticamente ese logo en assets\icon.ico.
