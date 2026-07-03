@@ -15,12 +15,12 @@ echo
 
 if ! command -v "$PYTHON_BIN" >/dev/null 2>&1; then
   echo "ERROR: no se encontro python3 para construir la app."
-  echo "Instala Python 3 en la Mac de construccion y vuelve a ejecutar este script."
   exit 1
 fi
 
 "$PYTHON_BIN" -m venv .venv-build
 source .venv-build/bin/activate
+
 python -m pip install --upgrade pip
 python -m pip install -r requirements_build.txt
 
@@ -52,5 +52,3 @@ echo "$(pwd)/dist/$APP_NAME.app"
 echo
 echo "Zip opcional generado en:"
 echo "$(pwd)/dist/$APP_NAME-macOS.zip"
-echo
-echo "La Mac que use la app no necesita Python. Si necesita tener Google Chrome o Microsoft Edge instalado."
