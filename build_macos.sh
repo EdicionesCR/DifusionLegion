@@ -21,11 +21,14 @@ fi
 
 "$PYTHON_BIN" -m venv .venv-build
 source .venv-build/bin/activate
-
 python -m pip install --upgrade pip
 python -m pip install -r requirements_build.txt
 
-python tools/crear_icono_macos.py
+if [ -f tools/crear_icono_macos.py ]; then
+  python tools/crear_icono_macos.py
+else
+  echo "Aviso: no existe tools/crear_icono_macos.py; se omite creacion de icono."
+fi
 
 rm -rf build dist
 python -m PyInstaller --noconfirm --clean "$SPEC_FILE"
